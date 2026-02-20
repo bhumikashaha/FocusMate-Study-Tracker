@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - FocusMate</title>
+    <link rel="stylesheet" href="/css/static.css">
+</head>
+<body>
+<div class="container">
+    <div class="card" style="text-align:center">
+        <h2>Hello, <span th:text="${user.name}" style="color:var(--accent)"></span> 👋</h2>
+        <p style="color:var(--muted)">Stay focused. Track progress. Improve daily.</p>
+
+        <div class="links" style="justify-content:center">
+            <a th:href="@{/pomodoro}">🍅 Pomodoro</a>
+            <a th:href="@{/goals}">🎯 Daily Goals</a>
+            <a th:href="@{/analytics}">📊 Analytics</a>
+            <a th:href="@{/profile}">👤 Profile</a>
+            <a th:href="@{/logout}" class="logout">🚪 Logout</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Daily Goals - FocusMate</title>
+    <link rel="stylesheet" href="/css/static.css">
+    <style>
+        /* Simple progress bar styling */
+        .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>🎯 Daily Goal</h2>
+
+        <p>
+            Goal:
+            <b th:text="${goal != null ? goal.goalText : 'No goal set'}"></b>
+        </p>
+
+        <p>
+            Status:
+            <b th:text="${goal != null && goal.completed ? 'Completed' : 'Pending'}"></b>
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" th:style="${'width:' + progressPercent + '%'}"
+                 th:text="${progressPercent + '%'}">
+            </div>
+        </div>
+
+        <p th:if="${goal != null}" style="text-align:center; font-size:13px;">
+            <span th:text="${goal.completedMinutes}">0</span> /
+            <span th:text="${goal.targetMinutes}">0</span> minutes
+        </p>
+
+        <form action="/set-goal" method="post" class="goal-form">
+            <input type="text" name="goalText" placeholder="Enter today's goal" required>
+            <button type="submit">Save Goal</button>
+        </form>
+
+        <div class="links">
+            <a href="/dashboard">← Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

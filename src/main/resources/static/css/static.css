@@ -1,0 +1,343 @@
+/* ===== GLOBAL VARIABLES ===== */
+:root {
+    --bg: #0f1724;
+    --card: rgba(255,255,255,0.05);
+    --accent: #60a5fa;
+    --accent-soft: rgba(96,165,250,0.15);
+    --danger: #f87171;
+    --muted: #94a3b8;
+    --glass: rgba(255,255,255,0.04);
+    --text: #e6eef8;
+}
+
+/* ===== Global Reset ===== */
+* {
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #071029 0%, #0f1724 100%);
+    color: var(--text);
+}
+
+/* ===== Layout ===== */
+.container {
+    max-width: 960px;
+    margin: 60px auto;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* ===== Card ===== */
+.card,
+.container > div,
+.container > form {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+}
+
+/* ===== Headings ===== */
+h2 {
+    margin: 0 0 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+p {
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ===== Forms ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 10px;
+    color: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--muted);
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+
+
+/* ===== Buttons ===== */
+button {
+    background: var(--accent);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: #01203a;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(96,165,250,0.4);
+}
+
+
+/* ===== Links ===== */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.links a {
+    background: var(--glass);
+    padding: 10px 16px;
+    border-radius: 14px;
+    color: var(--accent);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.links a:hover {
+    background: var(--accent-soft);
+    transform: translateY(-3px);
+}
+
+.links a.logout {
+    color: var(--danger);
+}
+
+
+
+/* ===== Pomodoro Timer ===== */
+#timer {
+    font-size: 72px;
+    font-weight: 700;
+    text-align: center;
+    padding: 18px;
+    margin: 14px 0;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pomodoro-hint {
+    text-align: center;
+    font-size: 13px;
+    color: #9fb4d1;
+    margin: 12px auto 0;
+    max-width: 400px;
+}
+
+.goal-info {
+    margin-top: 18px;
+    padding: 14px;
+    background: var(--glass);
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+
+/* ===== Daily Goal Progress Bar ===== */
+.progress-bar {
+    height: 14px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 12px ;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #60a5fa, #22d3ee);
+    transition: width 0.4s ease;
+}
+
+.goal-form button {
+    width: 180px;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 999px;
+    align-self: center;
+}
+
+
+
+/* ===== Streak ===== */
+.streak-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.streak-number {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+
+
+/* ===== Analytics Container ===== */
+
+body {
+    display: block;
+    padding-top: 60px;
+}
+
+/* Main analytics container */
+.analytics-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 32px 34px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(2, 6, 23, 0.7);
+    text-align: center;
+}
+
+/* Page title */
+.analytics-container h2 {
+    font-size: 28px;
+    margin-bottom: 26px;
+    font-weight: 600;
+}
+
+/* Grid layout */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Individual cards */
+.analytics-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 24px 24px 18px;
+    height: 380px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* Card titles */
+.analytics-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+/* Chart sizing */
+.analytics-card canvas {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+/* Back link */
+/*.analytics-container a {
+    display: inline-block;
+    margin-top: 26px;
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 500;
+}*/
+..analytics-container a {
+     background: var(--glass);
+         padding: 10px 16px;
+         border-radius: 14px;
+         color: var(--accent);
+         font-weight: 500;
+         transition: all 0.2s ease;
+ }
+
+.analytics-container a:hover {
+    background: var(--accent-soft);
+        transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card {
+        height: 360px;
+    }
+}
+@media (max-width: 768px) {
+    .analytics-container a {
+        justify-content: center;
+    }
+}
+
+
+/* ===== Error Message ===== */
+.error {
+    background: rgba(248,113,113,0.15);
+    color: #fecaca;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ===== Mobile First ===== */
+@media (max-width: 700px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        margin: 30px 12px;
+    }
+    #timer {
+        font-size: 52px;
+    }
+    .links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+

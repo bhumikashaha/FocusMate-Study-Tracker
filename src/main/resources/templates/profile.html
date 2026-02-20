@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - FocusMate</title>
+    <link rel="stylesheet" href="/css/static.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>👤 My Profile</h2>
+
+        <p>
+            <strong>Name:</strong>
+            <span th:text="${user.name}"></span>
+        </p>
+
+        <p>
+            <strong>Username:</strong>
+            <span th:text="${user.username}"></span>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <span th:text="${user.email}"></span>
+        </p>
+
+        <div class="links">
+            <a href="/dashboard">⬅ Back to Dashboard</a>
+            <a href="/logout" class="logout">🚪 Logout</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

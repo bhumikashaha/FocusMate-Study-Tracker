@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics - FocusMate</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/static.css}">
+</head>
+<body>
+
+<div class="analytics-container">
+    <h2>📊 Focus Analytics</h2>
+
+    <div class="analytics-grid">
+        <div class="analytics-card">
+            <h3>Focus Minutes</h3>
+            <canvas id="focusChart"></canvas>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Break Minutes</h3>
+            <canvas id="breakChart"></canvas>
+        </div>
+    </div>
+
+    <!--a th:href="@{/dashboard}">⬅ Back to Dashboard</a>-->
+    <div class="links">
+        <a th:href="@{/dashboard}">⬅ Back to Dashboard</a>
+    </div>
+</div>
+
+<!-- ✅ Thymeleaf → JavaScript safe data transfer -->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const sessions = [[${sessions}]];
+    /*]]>*/
+</script>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script th:src="@{/js/analytics.js}"></script>
+
+</body>
+</html>

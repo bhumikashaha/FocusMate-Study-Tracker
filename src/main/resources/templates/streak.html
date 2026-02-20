@@ -1,0 +1,14 @@
+<div class="container card" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2>🏆 Focus Streak</h2>
+
+    <div class="streak-box">
+        <span class="streak-number" th:text="${streak.streakCount}">0</span>
+        <span>Days</span>
+    </div>
+
+    <p>Keep focusing daily to grow your streak 🔥</p>
+
+    <div class="links">
+        <a th:href="@{/dashboard}">⬅ Back to Dashboard</a>
+    </div>
+</div>
